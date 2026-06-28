@@ -1,0 +1,292 @@
+/* ===========================
+   EarlsProject — styles.css
+   =========================== */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0f0f11;
+  color: #e8e8ec;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Nav / Header ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 15, 17, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 100px 24px 80px;
+  background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 100px;
+  padding: 5px 14px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: #9a9ab0;
+  margin-bottom: 36px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ---------- Buttons ---------- */
+.primary-button,
+.button.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #6366f1;
+  color: #ffffff;
+  border: 1px solid #6366f1;
+  transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+  cursor: pointer;
+}
+
+.primary-button:hover,
+.button.primary:hover {
+  background: #4f52d9;
+  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ---------- Extensions Section ---------- */
+.extensions {
+  padding: 72px 24px 80px;
+}
+
+.extensions .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+/* ---------- Extension Card ---------- */
+.extension-card {
+  background: #18181f;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.extension-card:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.extension-card h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+/* ---------- Screenshot Image ---------- */
+.extension-card img {
+  width: 100%;               /* fills card width */
+  max-width: 220px;          /* caps at a readable size */
+  height: 140px;             /* fixed height for uniformity */
+  object-fit: contain;       /* shows full screenshot, no crop */
+  object-position: center top; /* align to top so UI chrome is visible */
+  border-radius: 8px;
+  background: #0f0f11;       /* dark backing behind any transparent areas */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px;
+}
+
+.extension-card p {
+  font-size: 0.85rem;
+  color: #7c7c96;
+  flex: 1;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  padding: 72px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(15, 15, 17, 0) 60%);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta .container {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  font-size: 1rem;
+  color: #7c7c96;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 48px 24px 36px;
+}
+
+.footer .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.footer p {
+  font-size: 0.85rem;
+  color: #5a5a72;
+  margin-bottom: 20px;
+}
+
+.footer h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5a5a72;
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+.footer ul li a {
+  font-size: 0.85rem;
+  color: #7c7c96;
+  transition: color 0.15s;
+}
+
+.footer ul li a:hover {
+  color: #a5b4fc;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .hero {
+    padding: 72px 20px 60px;
+  }
+
+  .extensions .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .extension-card img {
+    height: 110px;
+  }
+}
+
+@media (max-width: 380px) {
+  .extensions .container {
+    grid-template-columns: 1fr;
+  }
+}
